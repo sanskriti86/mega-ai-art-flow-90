@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from "react";
+import { Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -57,16 +58,30 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-purple-900/20 to-black">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
       />
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 animate-fade-in">
+      
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 animate-float">
+          <Sparkles className="w-8 h-8 text-purple-400/50" />
+        </div>
+        <div className="absolute top-1/3 right-1/4 animate-float delay-200">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-sm" />
+        </div>
+        <div className="absolute bottom-1/4 left-1/3 animate-float delay-500">
+          <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-purple-600/10 to-blue-600/10 rotate-45 blur-sm" />
+        </div>
+      </div>
+
+      <div className="relative z-10 text-center px-4 mt-16">
+        <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-400 animate-fade-in">
           Mega AI
         </h1>
-        <p className="text-xl mb-8 text-gray-700 max-w-2xl mx-auto animate-fade-in delay-200">
+        <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
           Transform your business with cutting-edge AI solutions. From voice bots to workflow automation,
           we bring intelligence to every interaction.
         </p>

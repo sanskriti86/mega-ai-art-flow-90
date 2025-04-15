@@ -38,9 +38,10 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 animate-pulse">
                 <service.icon className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

@@ -45,24 +45,25 @@ const TestimonialSection = () => {
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
           What Our Clients Say
         </h2>
         <div className="relative">
           <div
             ref={scrollRef}
-            className="flex overflow-x-hidden gap-6 scroll-smooth px-4"
+            className="flex overflow-x-hidden gap-6 scroll-smooth px-4 pb-4"
           >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-none w-full md:w-[400px] p-6 bg-white rounded-lg shadow-lg"
+                className="flex-none w-full md:w-[400px] p-6 bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex items-center mb-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4"
+                    className="w-12 h-12 rounded-full mr-4 border-2 border-purple-200"
                   />
                   <div>
                     <h4 className="font-semibold">{testimonial.name}</h4>
@@ -76,7 +77,7 @@ const TestimonialSection = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm"
             onClick={() => scroll("left")}
           >
             <ChevronLeft className="h-6 w-6" />
@@ -84,7 +85,7 @@ const TestimonialSection = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm"
             onClick={() => scroll("right")}
           >
             <ChevronRight className="h-6 w-6" />

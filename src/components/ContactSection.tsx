@@ -45,16 +45,16 @@ const ContactSection = () => {
   return (
     <section className="py-20 px-4 bg-white" id="contact">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">Contact Us</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
+          <div className="animate-fade-in">
             <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
             <p className="text-gray-600 mb-6">
               Have questions about our AI solutions? We'd love to hear from you.
               Send us a message and we'll respond as soon as possible.
             </p>
             <div className="space-y-4">
-              <div className="flex items-center">
+              <div className="flex items-center transform transition-all duration-300 hover:translate-x-2">
                 <svg className="w-6 h-6 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -64,35 +64,35 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+          <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in delay-200">
+            <div className="transform transition-all duration-300 hover:translate-y-[-2px]">
               <Input
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full"
+                className="w-full border-purple-200 focus:border-purple-400"
               />
             </div>
-            <div>
+            <div className="transform transition-all duration-300 hover:translate-y-[-2px]">
               <Input
                 name="email"
                 type="email"
                 placeholder="Your Email"
                 required
-                className="w-full"
+                className="w-full border-purple-200 focus:border-purple-400"
               />
             </div>
-            <div>
+            <div className="transform transition-all duration-300 hover:translate-y-[-2px]">
               <Textarea
                 name="message"
                 placeholder="Your Message"
                 required
-                className="w-full min-h-[150px]"
+                className="w-full min-h-[150px] border-purple-200 focus:border-purple-400"
               />
             </div>
             <Button
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform hover:scale-105"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Sending..." : "Send Message"}

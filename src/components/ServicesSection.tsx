@@ -1,31 +1,54 @@
 
-import { Bot, Mail, MessageCircle, Share2, Workflow } from "lucide-react";
+import { Bot, Mail, MessageCircle, Share2, Workflow, Zap, Globe, Rocket } from "lucide-react";
 
 const services = [
   {
     icon: Bot,
     title: "AI Voice Bots",
-    description: "Natural conversations powered by advanced AI technology."
+    description: "Natural conversations powered by advanced AI technology.",
+    bgColor: "bg-purple-100",
+    iconColor: "text-purple-600",
+    hoverColor: "hover:bg-purple-200"
   },
   {
     icon: MessageCircle,
     title: "Chatbots",
-    description: "24/7 customer support with intelligent chat automation."
+    description: "24/7 customer support with intelligent chat automation.",
+    bgColor: "bg-blue-100",
+    iconColor: "text-blue-600",
+    hoverColor: "hover:bg-blue-200"
   },
   {
     icon: Share2,
     title: "X Automation",
-    description: "Streamline your Twitter presence with smart automation tools."
+    description: "Streamline your Twitter presence with smart automation tools.",
+    bgColor: "bg-pink-100",
+    iconColor: "text-pink-600",
+    hoverColor: "hover:bg-pink-200"
   },
   {
     icon: Mail,
     title: "Email Automation",
-    description: "Personalized email campaigns that drive engagement."
+    description: "Personalized email campaigns that drive engagement.",
+    bgColor: "bg-green-100",
+    iconColor: "text-green-600",
+    hoverColor: "hover:bg-green-200"
   },
   {
     icon: Workflow,
     title: "Workflow Automation",
-    description: "Optimize your business processes with AI-driven workflows."
+    description: "Optimize your business processes with AI-driven workflows.",
+    bgColor: "bg-orange-100",
+    iconColor: "text-orange-600",
+    hoverColor: "hover:bg-orange-200"
+  },
+  {
+    icon: Rocket,
+    title: "Strategic AI",
+    description: "Advanced AI solutions for strategic business growth.",
+    bgColor: "bg-indigo-100",
+    iconColor: "text-indigo-600",
+    hoverColor: "hover:bg-indigo-200"
   }
 ];
 
@@ -38,13 +61,13 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in"
+              className={`p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in ${service.hoverColor}`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 animate-pulse">
-                <service.icon className="w-6 h-6 text-purple-600" />
+              <div className={`w-16 h-16 ${service.bgColor} rounded-lg flex items-center justify-center mb-4 animate-pulse`}>
+                <service.icon className={`w-8 h-8 ${service.iconColor}`} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}

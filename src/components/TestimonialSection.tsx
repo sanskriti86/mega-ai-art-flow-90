@@ -45,7 +45,7 @@ const TestimonialSection = () => {
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
+        <h2 className="text-4xl font-bold text-center mb-12 text-purple-800 animate-fade-in">
           What Our Clients Say
         </h2>
         <div className="relative">

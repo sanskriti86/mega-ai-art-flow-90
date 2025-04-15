@@ -78,7 +78,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 mt-16">
-        <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-400 animate-fade-in">
+        <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600 animate-fade-in">
           Mega AI
         </h1>
         <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">

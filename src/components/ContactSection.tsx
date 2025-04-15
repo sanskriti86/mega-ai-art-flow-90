@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -45,7 +44,7 @@ const ContactSection = () => {
   return (
     <section className="py-20 px-4 bg-white" id="contact">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">Contact Us</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in text-purple-800">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="animate-fade-in">
             <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>

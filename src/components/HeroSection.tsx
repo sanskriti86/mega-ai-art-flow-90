@@ -1,10 +1,10 @@
-
 import { useEffect, useRef } from "react";
 import { Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -57,6 +57,23 @@ const HeroSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const fadeUpAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
+
+  const floatingAnimation = {
+    y: [-10, 10],
+    transition: {
+      y: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-purple-900/20 to-black">
       <canvas
@@ -64,28 +81,53 @@ const HeroSection = () => {
         className="absolute inset-0 z-0"
       />
       
-      {/* Floating Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 animate-float">
+        <motion.div 
+          className="absolute top-1/4 left-1/4"
+          animate={floatingAnimation}
+        >
           <Sparkles className="w-8 h-8 text-purple-400/50" />
-        </div>
-        <div className="absolute top-1/3 right-1/4 animate-float delay-200">
+        </motion.div>
+        <motion.div 
+          className="absolute top-1/3 right-1/4"
+          animate={floatingAnimation}
+          transition={{ delay: 0.2 }}
+        >
           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-sm" />
-        </div>
-        <div className="absolute bottom-1/4 left-1/3 animate-float delay-500">
+        </motion.div>
+        <motion.div 
+          className="absolute bottom-1/4 left-1/3"
+          animate={floatingAnimation}
+          transition={{ delay: 0.5 }}
+        >
           <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-purple-600/10 to-blue-600/10 rotate-45 blur-sm" />
-        </div>
+        </motion.div>
       </div>
 
-      <div className="relative z-10 text-center px-4 mt-16">
-        <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600 animate-fade-in">
+      <motion.div 
+        className="relative z-10 text-center px-4 mt-16"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 }
+        }}
+      >
+        <motion.h1 
+          className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600"
+          variants={fadeUpAnimation}
+        >
           Mega AI
-        </h1>
-        <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+        </motion.h1>
+        <motion.p 
+          className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto"
+          variants={fadeUpAnimation}
+          transition={{ delay: 0.2 }}
+        >
           Transform your business with cutting-edge AI solutions. From voice bots to workflow automation,
           we bring intelligence to every interaction.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </div>
   );
 };

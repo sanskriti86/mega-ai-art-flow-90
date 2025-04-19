@@ -37,7 +37,7 @@ const Navbar = () => {
         
         <NavigationMenu>
           <NavigationMenuList className="hidden md:flex gap-8">
-            {["Services", "Testimonials", "About", "Contact"].map((item) => (
+            {["Services", "Mission", "About", "Contact"].map((item) => (
               <NavigationMenuItem key={item}>
                 <NavigationMenuLink
                   onClick={() => scrollToSection(item.toLowerCase())}

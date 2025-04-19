@@ -8,19 +8,19 @@ import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
       <HeroSection />
-      <div id="services">
+      <div id="services" className="w-full">
         <ServicesSection />
       </div>
-      <div id="mission">
+      <div id="mission" className="w-full">
         <MissionSection />
       </div>
-      <div id="about">
+      <div id="about" className="w-full">
         <AboutSection />
       </div>
-      <div id="contact">
+      <div id="contact" className="w-full">
         <ContactSection />
       </div>
     </div>

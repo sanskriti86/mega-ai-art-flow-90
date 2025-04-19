@@ -76,7 +76,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-purple-900/20 to-black">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-purple-900/20 to-black px-4 md:px-0">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
@@ -84,20 +84,20 @@ const HeroSection = () => {
       
       <div className="absolute inset-0 pointer-events-none">
         <motion.div 
-          className="absolute top-1/4 left-1/4"
+          className="absolute top-1/4 left-1/4 hidden md:block"
           animate={floatingAnimation}
         >
           <Sparkles className="w-8 h-8 text-purple-400/50" />
         </motion.div>
         <motion.div 
-          className="absolute top-1/3 right-1/4"
+          className="absolute top-1/3 right-1/4 hidden md:block"
           animate={floatingAnimation}
           transition={{ delay: 0.2 }}
         >
           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-sm" />
         </motion.div>
         <motion.div 
-          className="absolute bottom-1/4 left-1/3"
+          className="absolute bottom-1/4 left-1/3 hidden md:block"
           animate={floatingAnimation}
           transition={{ delay: 0.5 }}
         >
@@ -106,7 +106,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div 
-        className="relative z-10 text-center px-4 mt-16 space-y-6"
+        className="relative z-10 text-center px-4 mt-16 space-y-6 max-w-4xl mx-auto"
         initial="hidden"
         animate="visible"
         variants={{
@@ -115,13 +115,13 @@ const HeroSection = () => {
         }}
       >
         <motion.h1 
-          className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600 leading-tight"
+          className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600 leading-tight"
           variants={fadeUpAnimation}
         >
           Mega AI
         </motion.h1>
         <motion.p 
-          className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto"
+          className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto"
           variants={fadeUpAnimation}
           transition={{ delay: 0.2 }}
         >

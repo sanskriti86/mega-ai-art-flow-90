@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
@@ -105,7 +106,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div 
-        className="relative z-10 text-center px-4 mt-16"
+        className="relative z-10 text-center px-4 mt-16 space-y-6"
         initial="hidden"
         animate="visible"
         variants={{
@@ -114,7 +115,7 @@ const HeroSection = () => {
         }}
       >
         <motion.h1 
-          className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600"
+          className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-600 leading-tight"
           variants={fadeUpAnimation}
         >
           Mega AI

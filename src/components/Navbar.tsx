@@ -54,7 +54,7 @@ const Navbar = () => {
             {mobileMenuOpen && (
               <div className="absolute right-0 top-full mt-2 w-48 bg-black/90 backdrop-blur-md rounded-lg shadow-lg overflow-hidden animate-fade-in">
                 <div className="py-2">
-                  {["Services", "Mission", "About", "Contact"].map((item) => (
+                  {["Services", "Testimonials", "Mission", "About", "Contact"].map((item) => (
                     <button
                       key={item}
                       onClick={() => scrollToSection(item.toLowerCase())}
@@ -70,7 +70,7 @@ const Navbar = () => {
         ) : (
           <NavigationMenu>
             <NavigationMenuList className="flex gap-8">
-              {["Services", "Mission", "About", "Contact"].map((item) => (
+              {["Services", "Testimonials", "Mission", "About", "Contact"].map((item) => (
                 <NavigationMenuItem key={item}>
                   <NavigationMenuLink
                     onClick={() => scrollToSection(item.toLowerCase())}

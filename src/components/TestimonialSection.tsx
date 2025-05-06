@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO, TechStart Inc",
-    content: "Mega AI transformed our customer service with their intelligent chatbots. Response times improved by 80%!",
+    content: "Mega AI transformed our customer service with their intelligent AI Voice Bots. Response times improved by 80%!",
     image: "https://i.pravatar.cc/150?img=1"
   },
   {
@@ -27,6 +27,18 @@ const testimonials = [
     role: "Social Media Manager, BrandX",
     content: "Their X automation tools have made managing our social media presence so much easier and more effective.",
     image: "https://i.pravatar.cc/150?img=4"
+  },
+  {
+    name: "Jennifer Lopez",
+    role: "Customer Support Lead, TechGiant",
+    content: "The chatbots provide 24/7 customer support that feels genuinely human. Our customers love the instant responses!",
+    image: "https://i.pravatar.cc/150?img=5"
+  },
+  {
+    name: "Robert Kim",
+    role: "Strategy Director, FutureTech",
+    content: "Strategic AI solutions from Mega AI have been instrumental in our business growth over the past year.",
+    image: "https://i.pravatar.cc/150?img=6"
   }
 ];
 
@@ -43,53 +55,94 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
+    <section className="py-20 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-purple-800 animate-fade-in">
+        <h2 className="text-4xl font-bold text-center mb-12 text-purple-400 animate-fade-in">
           What Our Clients Say
         </h2>
         <div className="relative">
           <div
             ref={scrollRef}
-            className="flex overflow-x-hidden gap-6 scroll-smooth px-4 pb-4"
+            className="flex overflow-x-auto scrollbar-hide gap-6 scroll-smooth px-4 pb-8"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-none w-full md:w-[400px] p-6 bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in"
+                className="flex-none w-full md:w-[350px] p-6 bg-gray-900/60 backdrop-blur-sm border border-purple-500/20 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex items-center mb-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 border-2 border-purple-200"
+                    className="w-12 h-12 rounded-full mr-4 border-2 border-purple-500/50"
                   />
                   <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                    <p className="text-sm text-purple-300">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-700">{testimonial.content}</p>
+                <p className="text-gray-300">{testimonial.content}</p>
               </div>
             ))}
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm"
-            onClick={() => scroll("left")}
+          
+          {/* Mobile-friendly navigation buttons */}
+          <div className="flex justify-center gap-4 mt-6 md:hidden">
+            <Button
+              variant="outline"
+              size="icon"
+              className="bg-purple-900/30 border border-purple-500/30 hover:bg-purple-800/50"
+              onClick={() => scroll("left")}
+            >
+              <ChevronLeft className="h-5 w-5 text-purple-300" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="bg-purple-900/30 border border-purple-500/30 hover:bg-purple-800/50"
+              onClick={() => scroll("right")}
+            >
+              <ChevronRight className="h-5 w-5 text-purple-300" />
+            </Button>
+          </div>
+          
+          {/* Desktop navigation buttons */}
+          <div className="hidden md:block">
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-purple-900/30 border border-purple-500/30 hover:bg-purple-800/50"
+              onClick={() => scroll("left")}
+            >
+              <ChevronLeft className="h-6 w-6 text-purple-300" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-purple-900/30 border border-purple-500/30 hover:bg-purple-800/50"
+              onClick={() => scroll("right")}
+            >
+              <ChevronRight className="h-6 w-6 text-purple-300" />
+            </Button>
+          </div>
+        </div>
+        
+        {/* Book a Call Button */}
+        <div className="mt-16 text-center">
+          <a 
+            href="https://calendly.com/sankalpgour2" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block"
           >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm"
-            onClick={() => scroll("right")}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+            <Button 
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 rounded-lg text-lg font-semibold shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:scale-105"
+            >
+              Book a Call
+            </Button>
+          </a>
         </div>
       </div>
     </section>

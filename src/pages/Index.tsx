@@ -6,6 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 import MissionSection from "@/components/MissionSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import TestimonialSection from "@/components/TestimonialSection";
 
 const Index = () => {
   // Ensure smooth scrolling behavior
@@ -35,6 +36,9 @@ const Index = () => {
       <HeroSection />
       <div id="services" className="w-full pt-16">
         <ServicesSection />
+      </div>
+      <div id="testimonials" className="w-full pt-16">
+        <TestimonialSection />
       </div>
       <div id="mission" className="w-full pt-16">
         <MissionSection />

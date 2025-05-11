@@ -7,8 +7,12 @@ import MissionSection from "@/components/MissionSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import TestimonialSection from "@/components/TestimonialSection";
+import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  
   // Ensure smooth scrolling behavior
   useEffect(() => {
     // Fix for mobile browsers that don't support smooth scrolling
@@ -49,6 +53,23 @@ const Index = () => {
       <div id="contact" className="w-full pt-16">
         <ContactSection />
       </div>
+      
+      {/* Mobile fixed Book Call button */}
+      {isMobile && (
+        <div className="fixed bottom-6 right-6 z-40">
+          <a 
+            href="https://calendly.com/sankalpgour2" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button 
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-full font-semibold shadow-lg hover:shadow-purple-500/20 transition-all"
+            >
+              Book a Call
+            </Button>
+          </a>
+        </div>
+      )}
     </div>
   );
 };

@@ -128,22 +128,6 @@ const TestimonialSection = () => {
             </Button>
           </div>
         </div>
-        
-        {/* Book a Call Button */}
-        <div className="mt-16 text-center">
-          <a 
-            href="https://calendly.com/sankalpgour2" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <Button 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 rounded-lg text-lg font-semibold shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:scale-105"
-            >
-              Book a Call
-            </Button>
-          </a>
-        </div>
       </div>
     </section>
   );

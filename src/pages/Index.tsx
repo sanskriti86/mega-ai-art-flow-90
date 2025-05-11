@@ -9,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { PhoneCall } from "lucide-react";
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -56,15 +57,16 @@ const Index = () => {
       
       {/* Mobile Book Call button - positioned at the bottom of the page instead of fixed to viewport */}
       {isMobile && (
-        <div className="absolute bottom-6 right-6 z-40">
+        <div className="fixed bottom-6 right-6 z-40">
           <a 
             href="https://calendly.com/sankalpgour2" 
             target="_blank" 
             rel="noopener noreferrer"
           >
             <Button 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-full font-semibold shadow-lg hover:shadow-purple-500/20 transition-all"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-full font-semibold shadow-lg hover:shadow-purple-500/20 transition-all flex items-center gap-2"
             >
+              <PhoneCall className="w-5 h-5 animate-pulse" />
               Book a Call
             </Button>
           </a>

@@ -35,7 +35,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
       <Navbar />
       <HeroSection />
       <div id="services" className="w-full pt-16">
@@ -54,9 +54,9 @@ const Index = () => {
         <ContactSection />
       </div>
       
-      {/* Mobile fixed Book Call button */}
+      {/* Mobile Book Call button - positioned at the bottom of the page instead of fixed to viewport */}
       {isMobile && (
-        <div className="fixed bottom-6 right-6 z-40">
+        <div className="absolute bottom-6 right-6 z-40">
           <a 
             href="https://calendly.com/sankalpgour2" 
             target="_blank" 

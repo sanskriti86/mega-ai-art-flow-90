@@ -9,8 +9,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-   base: '/mega-ai-art-flow-90/',
-  
   plugins: [
     react(),
     mode === 'development' &&

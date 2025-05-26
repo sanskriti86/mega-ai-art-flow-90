@@ -9,7 +9,6 @@ import ContactSection from "@/components/ContactSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { PhoneCall } from "lucide-react";
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -36,7 +35,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <div id="services" className="w-full pt-16">
@@ -55,7 +54,7 @@ const Index = () => {
         <ContactSection />
       </div>
       
-      {/* Mobile Book Call button - positioned at the bottom of the page instead of fixed to viewport */}
+      {/* Mobile fixed Book Call button */}
       {isMobile && (
         <div className="fixed bottom-6 right-6 z-40">
           <a 
@@ -64,9 +63,8 @@ const Index = () => {
             rel="noopener noreferrer"
           >
             <Button 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-full font-semibold shadow-lg hover:shadow-purple-500/20 transition-all flex items-center gap-2"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-full font-semibold shadow-lg hover:shadow-purple-500/20 transition-all"
             >
-              <PhoneCall className="w-5 h-5 animate-pulse" />
               Book a Call
             </Button>
           </a>
